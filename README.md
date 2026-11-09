@@ -5,9 +5,9 @@ Windows Minidump and kernel dump parser. Compatible in Constrained Language Mode
 It reads Windows Minidump and Kernel dump files '.dmp' and '.mdmp', that have the PAGEDU64 and MDMP signature in the header. When parsing PAGEDU64 signed dumps limited information is provided but still usually enough to help (in my experience). There is a feature to pass the rest of the dump file to CDB.exe (Command Line Debugger) and grab more information. MDMP signed dumps have a lot more information and is well document on its structure.
 
 ## Requirements
--Powershell 5.1 or 7
--Admin rights might be needed if the parser finds a file in a restriced folder.
--Optional: cdb.exe, there is a feature in the parser that can pass info to cdb.exe if you wish, you can always decline the pass off. Info on how to install the tool can be found [here](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
+- Powershell 5.1 or 7
+- Admin rights might be needed if the parser finds a file in a restriced folder.
+- Optional: cdb.exe, there is a feature in the parser that can pass info to cdb.exe if you wish, you can always decline the pass off. Info on how to install the tool can be found [here](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
 
 ## Install
 This is a Powershell Module so you will first need to determine where to install your Modules. Run '$env:PSMODULEPATH' to find the list of allowed paths to install modules. This will be different depending on if you have Powershell 5.1 or 7. Then copy the Read-ClmDump folder into your modules folder.
