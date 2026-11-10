@@ -10,9 +10,9 @@ It reads Windows Minidump and Kernel dump files '.dmp' and '.mdmp', that have th
 - Optional: cdb.exe, there is a feature in the parser that can pass info to cdb.exe if you wish, you can always decline the pass off. Info on how to install the tool can be found [here](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
 
 ## Install
-This is a Powershell Module so you will first need to determine where to install your Modules. Run '$env:PSMODULEPATH' to find the list of allowed paths to install modules. This will be different depending on if you have Powershell 5.1 or 7. Then copy the Read-ClmDump folder into your modules folder.
+This is a Powershell Module so you will first need to determine where to install your Modules. Run '$env:PSMODULEPATH' to find the list of allowed paths to install modules. This will be different depending on if you have Powershell 5.1 or 7. Make a folder named ' Read-ClmDump ' then put Read-ClmDump.psm1 in it.
 ```
-$env:PSMODULEPATH\Read-ClmDump\
+$env:PSMODULEPATH\Read-ClmDump\Read-ClmDump.psm1
 ```
 Then:
 ```powershell
