@@ -53,7 +53,7 @@ Only the parts of the file that are needed get loaded, because byte reading in P
 - Register context (RIP/RSP) is only decoded for x64 MDMP dumps.
 - PAGEDU64 parsing supports x64 only.
 - Full-memory dumps (for example from Task Manager) may store thread stacks in a separate memory list that isn't read yet.
-- PAGEDU64 does not identify the faulting driver without `cdb`.
+- `Read-Pagedu64` does not identify the faulting driver without `cdb`.
 
 ## Known issues
 
