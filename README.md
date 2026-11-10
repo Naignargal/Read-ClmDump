@@ -2,7 +2,7 @@
 A Windows Minidump and kernel dump parser. Compatible in Constrained Language Mode
 
 ## What it reads
-It reads Windows Minidump and Kernel dump files '.dmp' and '.mdmp', that have the PAGEDU64 and MDMP signature in the header. When parsing PAGEDU64 signed dumps limited information is provided but still usually enough to help (in my experience). There is a feature to pass the rest of the dump file to CDB.exe (Command Line Debugger) and grab more information. MDMP signed dumps have a lot more information and is well document on its structure.
+It reads Windows Minidump and Kernel dump files '.dmp' and '.mdmp', that have the PAGEDU64 and MDMP signature in the header. When parsing PAGEDU64 signed dumps limited information is provided but still usually enough to help (in my experience). There is a feature to pass the rest of the dump file to CDB.exe (Command Line Debugger) and grab more information. MDMP signed dumps have a lot more information and is well documented on its structure.
 
 ## Requirements
 - Powershell 5.1 or 7
