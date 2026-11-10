@@ -31,7 +31,7 @@ Use exactly one of these switches:
 | `-latestforce` | Parse the newest dump found by `-scanforce` |
 
 ```powershell
-Read-ClmDump -path C:\Users\me\AppData\Local\CrashDumps\app.exe.1234.dmp
+Read-ClmDump -path C:\Users\me\AppData\Local\CrashDumps\***.dmp
 Read-ClmDump -scanforce
 Read-ClmDump -latestforce -Verbose     # -Verbose shows each parsing step
 ```
@@ -41,8 +41,8 @@ Read-ClmDump -latestforce -Verbose     # -Verbose shows each parsing step
 
 The module reads the dump's raw bytes with `Get-Content` and decodes the fields itself using the documented structures:
 
-- **MDMP:** minidump header → stream directory → SystemInfo, MiscInfo, Exception, ModuleList and ThreadList streams.
-- **PAGEDU64:** the fixed kernel dump header (`DUMP_HEADER64`).
+- **MDMP:** minidump header, stream directory, SystemInfo, MiscInfo, Exception, ModuleList and ThreadList streams.
+- **PAGEDU64:** the fixed kernel dump header (`PAGEDU64`).
 
 Only the parts of the file that are needed get loaded, because byte reading in PowerShell with Constrained Language Mode is slow.
 
