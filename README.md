@@ -60,6 +60,10 @@ Only the parts of the file that are needed get loaded, because byte reading in P
 - "Read past end of loaded bytes" on some MDMP dumps. To stay fast, the parser loads only the streams it needs plus an extra 1 MB. If a field it reads is stored further into the file, parsing stops with `Read past end of loaded bytes at offset 0x...`. Workaround: run with `-Verbose` to see how far it read, and raise the `1048576` margin in `Read-Mdmp`.
 - Kernel (PAGEDU64) parsing stops early on unexpected values. If the dump isn't x64 or the dump type isn't recognized, the parser returns what it has read so far with an `Error` field instead of the full result.
 
+## Author
+
+- Amanuel Worku (Naignargal)
+
 ## License
 
 MIT
