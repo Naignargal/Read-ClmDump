@@ -10,14 +10,55 @@ It reads Windows Minidump and Kernel dump files '.dmp' and '.mdmp', that have th
 - Optional: cdb.exe, there is a feature in the parser that can pass info to cdb.exe if you wish, you can always decline the pass off. Info on how to install the tool can be found [here](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
 
 ## Install
-This is a Powershell Module so you will first need to determine where to install your Modules. Run '$env:PSMODULEPATH' to find the list of allowed paths to install modules. This will be different depending on if you have Powershell 5.1 or 7. Make a folder named ' Read-ClmDump ' then put Read-ClmDump.psm1 in it.
-```
-$env:PSMODULEPATH\Read-ClmDump\Read-ClmDump.psm1
-```
-Then:
-```powershell
-Import-Module Read-ClmDump
-```
+
+1. Find your modules folders:
+
+   ```powershell
+   $env:PSModulePath -split ';'
+   ```
+
+   Pick the one in your Documents folder (recommended):
+   - Windows PowerShell 5.1: `Documents\WindowsPowerShell\Modules`
+   - PowerShell 7: `Documents\PowerShell\Modules`
+
+2. Create a folder named `Read-ClmDump` inside it, and put `Read-ClmDump.psm1` and `Read-ClmDump.psd1` in that folder:
+
+   ```text
+   Modules\
+     Read-ClmDump\
+       Read-ClmDump.psd1
+       Read-ClmDump.psm1
+   ```
+
+3. Unblock the files.
+
+   PowerShell 5.1:
+
+   ```powershell
+   Get-ChildItem "$HOME\Documents\WindowsPowerShell\Modules\Read-ClmDump" | Unblock-File
+   ```
+
+   PowerShell 7:
+
+   ```powershell
+   Get-ChildItem "$HOME\Documents\PowerShell\Modules\Read-ClmDump" | Unblock-File
+   ```
+
+   (Or right-click each file → **Properties** → tick **Unblock** at the bottom.)
+
+5. Load it:
+
+   ```powershell
+   Import-Module Read-ClmDump
+   ```
+
+> [!NOTE]
+> If `Import-Module` says running scripts is disabled, allow local and unblocked scripts:
+>
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
 ## Usage
 
 Use exactly one of these switches:
